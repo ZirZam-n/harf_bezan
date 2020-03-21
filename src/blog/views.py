@@ -11,3 +11,7 @@ def all_posts_view(request):
         "blog/index.html",
         {'posts_list': posts_list}
     )
+
+
+def new_post_view(request):
+    pass
