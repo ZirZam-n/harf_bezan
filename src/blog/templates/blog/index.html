@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>حرف بزن</title>
+</head>
+<body>
+{% for post in post_list %}
+<div class="post">
+    <div class="title">
+        {{ post.title }}
+    </div>
+    <div class="text">
+        {{ post.text }}
+    </div>
+    <div class="author">
+        {{ post.author }}
+    </div>
+</div>
+{% endfor %}
+</body>
+</html>
