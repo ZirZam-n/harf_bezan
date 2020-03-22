@@ -1,42 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>حرف بزن</title>
+{% extends './page_skeleton.html' %}
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+{% block page_content %}
 
-    <script type="text/javascript" src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
-
-</head>
-<body>
-<div class="container">
-    <div class="jumbotron">
-        <h1>
-            حرف بزن
-        </h1>
+<a href="/new/">
+    <div class="btn btn-default new-post-button">
+        پست جدید
     </div>
-    <a href="/new/">
-        <div class="btn btn-default new-post-button">
-            پست جدید
-        </div>
-    </a>
-    <div class="row">
-        <div class="col-sm-12">
-            {% for post in posts_list %}
-            <div class="row">
-                {% include './post_view.html' with title=post.title author=post.author text=post.text %}
-            </div>
-            <hr class="separator">
-            {% endfor %}
-        </div>
-    </div>
+</a>
+{% for post in posts_list %}
+<div class="row">
+    {% include './post_view.html' with title=post.title author=post.author text=post.text %}
 </div>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/static/js/renderer.js"></script>
-</html>
+<hr class="separator">
+{% endfor %}
+
+{% endblock %}
