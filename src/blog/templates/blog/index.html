@@ -3,20 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>حرف بزن</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
+    <script type="text/javascript" src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+
 </head>
 <body>
-{% for post in posts_list %}
-<div class="post">
-    <div class="title">
-        {{ post.title }}
+<div class="container">
+    <div class="jumbotron">
+        <h1>
+            حرف بزن
+        </h1>
     </div>
-    <div class="text">
-        {{ post.text }}
-    </div>
-    <div class="author">
-        {{ post.author }}
+    <a href="/new/">
+        <div class="btn btn-default new-post-button">
+            پست جدید
+        </div>
+    </a>
+    <div class="row">
+        <div class="col-sm-12">
+            {% for post in posts_list %}
+            <hr>
+            <div class="row">
+                <div class="post">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <div class="row">
+                            <h3>
+                                {{ post.title }}
+                            </h3>
+                        </div>
+                        <div class="row post-text" onload="console.log('salam')">
+                            {{ post.text }}
+                        </div>
+                        <div class="row">
+                            <h5>
+                                {{ post.author }}
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
-{% endfor %}
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/renderer.js"></script>
 </html>
