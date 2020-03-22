@@ -14,4 +14,7 @@ def all_posts_view(request):
 
 
 def new_post_view(request):
-    pass
+    return render(
+        request,
+        "blog/new_post.html",
+    )
