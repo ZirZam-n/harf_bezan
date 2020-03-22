@@ -23,9 +23,20 @@ body {
 }
 
 .new-post-button {
-    width: 100%;
+    width: 86%;
+    margin-right: 7%;
     vertical-align: center;
 }
 
 .post-text {
+}
+
+.separator {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid grey;
+    padding: 0;
+    width: 70%;
+    margin-right: 15%;
 }
