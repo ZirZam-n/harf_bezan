@@ -28,25 +28,7 @@
         <div class="col-sm-12">
             {% for post in posts_list %}
             <div class="row">
-                <div class="post">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-8">
-                        <div class="row">
-                            <h3>
-                                {{ post.title }}
-                            </h3>
-                        </div>
-                        <div class="row post-text" onload="console.log('salam')">
-                            {{ post.text }}
-                        </div>
-                        <div class="row">
-                            <h5>
-                                {{ post.author }}
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-sm-2"></div>
-                </div>
+                {% include './post_view.html' with title=post.title author=post.author text=post.text %}
             </div>
             <hr class="separator">
             {% endfor %}
