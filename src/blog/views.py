@@ -8,7 +8,7 @@ from .models import Post
 
 
 def all_posts_view(request):
-    posts_list = Post.objects.all()
+    posts_list = reversed(Post.objects.all())
     return render(
         request,
         "blog/index.html",
