@@ -1,0 +1,1 @@
+web: cd src && gunicorn harf_bezan.wsgi
