@@ -9,7 +9,6 @@ class Post(models.Model):
         max_length=100,
         null=False,
         blank=False,
-        unique=True,
     )
 
     author = models.CharField(
@@ -17,7 +16,6 @@ class Post(models.Model):
         max_length=100,
         null=False,
         blank=False,
-        unique=True,
     )
 
     text = models.TextField(
