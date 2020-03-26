@@ -23,7 +23,6 @@ def new_post_view(request):
             "blog/new_post.html",
         )
     elif request.method == 'POST':
-        print(request.POST)
         form = PostForm(request.POST)
         if form.is_valid():
             form.save(commit=True)
